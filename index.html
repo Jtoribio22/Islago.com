@@ -80,6 +80,9 @@
     --fishing-blue: #6FB7DE;
     --fishing-blue-light: #E4F3FB;
     --fishing-blue-dark: #2E7EA8;
+    --catamaran-purple: #B79CD1;
+    --catamaran-purple-light: #F3EDF9;
+    --catamaran-purple-dark: #7B4FA0;
     --radius: 12px;
     --radius-sm: 8px;
   }
@@ -715,6 +718,50 @@
     font-size: 3rem;
   }
 
+  /* ─── CATAMARAN THEME (light purple) ─── */
+  .main-tab-btn.catamaran-active.active {
+    background: var(--catamaran-purple-dark);
+    border-color: var(--catamaran-purple-dark);
+  }
+
+  .tours-golf-wrap.catamaran-mode { background: var(--catamaran-purple-light); }
+
+  #mainTab-catamaran { background: transparent; }
+
+  .catamaran-filter-btn:hover, .catamaran-filter-btn.active {
+    background: var(--catamaran-purple-dark);
+    color: white;
+    border-color: var(--catamaran-purple-dark);
+  }
+
+  .card-badge.catamaran { background: var(--catamaran-purple-dark); }
+
+  .catamaran-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--catamaran-purple-dark);
+    background: rgba(123,79,160,0.1);
+    padding: 0.25rem 0.65rem;
+    border-radius: 50px;
+    width: fit-content;
+  }
+
+  .catamaran-card .btn-book { background: var(--catamaran-purple-dark); }
+  .catamaran-card .btn-book:hover { background: var(--catamaran-purple); }
+
+  .catamaran-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--catamaran-purple-light) 0%, var(--catamaran-purple) 100%);
+    font-size: 3rem;
+  }
+
   /* ─── WHATSAPP FLOATING ─── */
   .wa-float {
     position: fixed;
@@ -966,6 +1013,7 @@
     <li><a href="#tours">Tours</a></li>
     <li><a href="#golf" onclick="switchMainTab('golf', document.querySelector('.main-tab-btn.golf-active'))">Golf</a></li>
     <li><a href="#fishing" onclick="switchMainTab('fishing', document.querySelector('.main-tab-btn.fishing-active'))">Fishing</a></li>
+    <li><a href="#catamaran" onclick="switchMainTab('catamaran', document.querySelector('.main-tab-btn.catamaran-active'))">Catamaran</a></li>
     <li><a href="#transfers">Transfers</a></li>
     <li><a href="#about">About</a></li>
   </ul>
@@ -1046,6 +1094,7 @@
   <button class="main-tab-btn active" onclick="switchMainTab('tours', this)">🌴 Tours &amp; Excursions</button>
   <button class="main-tab-btn golf-active" onclick="switchMainTab('golf', this)">⛳ Golf Courses</button>
   <button class="main-tab-btn fishing-active" onclick="switchMainTab('fishing', this)">🎣 Fishing Charters</button>
+  <button class="main-tab-btn catamaran-active" onclick="switchMainTab('catamaran', this)">⛵ Catamaran Charters</button>
 </div>
 
 <div class="main-tab-panel active" id="mainTab-tours">
@@ -3281,7 +3330,350 @@
   </div>
 </div>
 </div>
+<!-- ════════════════════════════════
+     CATAMARAN CHARTERS SECTION
+     ✏️ Duplicate .tour-card.catamaran-card blocks for each boat.
+     ════════════════════════════════ -->
+<div class="main-tab-panel" id="mainTab-catamaran">
+<div class="section catamaran-section" id="catamaran">
+  <div class="section-header">
+    <span class="section-eyebrow" style="color:var(--catamaran-purple-dark);">Set Sail in Puerto Plata</span>
+    <h2 class="section-title">Catamaran <span style="color:var(--catamaran-purple-dark);">Charters</span></h2>
+    <p style="max-width:700px;margin-top:0.75rem;color:var(--text-mid);font-size:0.95rem;">
+      Rent a private, fully crewed catamaran or yacht for a 3-hour cruise along the Puerto Plata coastline, complete with food and drinks on board.
+    </p>
+  </div>
 
+  <div class="cards-grid" id="catamaranGrid">
+
+    <!-- ── CATAMARAN CARD 1: Schifferboot 65 ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="A spacious 65-foot Schifferboot with a full crew on board, perfect for groups looking to relax on the water off Puerto Plata."
+         data-highlights="65-foot Schifferboot vessel | Capacity for 10+ guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="Great for small to mid-sized groups. Let us know of any dietary preferences ahead of time so the crew can prepare accordingly.">
+      <div class="card-img-wrap">
+        <img src="SchifferbootCatamaran65.jpg" alt="Schifferboot 65 Catamaran Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Schifferboot 65</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            10+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">⛵ 65' Crewed Boat</span>
+        <p class="card-desc">A crewed 65-foot Schifferboot in Puerto Plata with food and drinks included, ideal for a relaxed 3-hour cruise.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$1,300 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Schifferboot%2065%20catamaran." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 2: Fountaine Pajot 43 ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="A Fountaine Pajot Belize catamaran offering plenty of deck space for larger groups cruising the Puerto Plata coast."
+         data-highlights="43-foot Fountaine Pajot Belize catamaran | Capacity for 15+ guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="A popular pick for bachelor/bachelorette parties and birthday celebrations thanks to its wide open deck.">
+      <div class="card-img-wrap">
+        <img src="FountainePajot43.webp" alt="Fountaine Pajot 43 Catamaran Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Fountaine Pajot 43</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            15+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">⛵ 43' Crewed Catamaran</span>
+        <p class="card-desc">A 43-foot Fountaine Pajot Belize catamaran with full crew, food and drinks, built for group cruising in Puerto Plata.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$1,100 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Fountaine%20Pajot%2043%20catamaran." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 3: Privilege 52 Catamaran ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="A 52-foot Privilege catamaran with room for 20 or more guests, one of the roomiest charters in the fleet."
+         data-highlights="52-foot Privilege catamaran | Capacity for 20+ guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="Well suited to larger groups and corporate outings looking for extra deck space.">
+      <div class="card-img-wrap">
+        <img src="Privilege52Catamaran.jpg" alt="Privilege 52 Catamaran Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Privilege 52 Catamaran</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            20+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">⛵ 52' Crewed Catamaran</span>
+        <p class="card-desc">A spacious 52-foot Privilege catamaran with full crew, food and drinks, perfect for larger groups on the water.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$1,350 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Privilege%2052%20Catamaran." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 4: Schifferboot Extended ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="The largest boat in the fleet, built for big groups, parties and events cruising off Puerto Plata."
+         data-highlights="Extended Schifferboot vessel | Capacity for 21-30 guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="Our largest charter option — ideal for weddings, corporate events and big group celebrations.">
+      <div class="card-img-wrap">
+        <img src="SchifferbootExtended.jpg" alt="Schifferboot Extended Catamaran Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Schifferboot Extended</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            21-30 guests
+          </span>
+        </div>
+        <span class="catamaran-tag">⛵ Largest Charter</span>
+        <p class="card-desc">Our biggest boat, an extended Schifferboot with full crew, food and drinks, built for big group celebrations.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$1,950 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Schifferboot%20Extended%20catamaran." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 5: Ocean Alexander 46 ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="A sleek 46-foot Ocean Alexander motor yacht, a comfortable and stylish option for cruising Puerto Plata."
+         data-highlights="46-foot Ocean Alexander yacht | Capacity for 15+ guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="A great value option for groups wanting a comfortable motor yacht experience without the catamaran-style deck.">
+      <div class="card-img-wrap">
+        <img src="OceanAlexander46.webp" alt="Ocean Alexander 46 Yacht Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Ocean Alexander 46</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            15+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">🛥️ 46' Motor Yacht</span>
+        <p class="card-desc">A 46-foot Ocean Alexander motor yacht with full crew, food and drinks, offering a comfortable ride along the coast.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$850 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Ocean%20Alexander%2046%20yacht." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 6: Hatteras 52 Yacht ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="A classic 52-foot Hatteras motor yacht, offering a smooth, comfortable cruise along the Puerto Plata coastline."
+         data-highlights="52-foot Hatteras yacht | Capacity for 15+ guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="A dependable, comfortable option well suited to families and mixed-age groups.">
+      <div class="card-img-wrap">
+        <img src="Hatteras52Yacht.webp" alt="Hatteras 52 Yacht Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Hatteras 52 Yacht</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            15+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">🛥️ 52' Motor Yacht</span>
+        <p class="card-desc">A 52-foot Hatteras motor yacht with full crew, food and drinks, ideal for a comfortable 3-hour charter.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$900 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Hatteras%2052%20Yacht." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 7: Sosúa Snorkel Catamaran ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="Cruise from Puerto Plata to the reefs of Sosúa aboard this Aventura Boats catamaran, with time in the water to snorkel."
+         data-highlights="52-foot Aventura Boats catamaran | Capacity for 15+ guests | Full crew included | Snorkel stop near Sosúa | Food and drinks on board"
+         data-included="Professional crew | Snorkel gear | Food and drinks | 3-hour cruise"
+         data-good-to-know="This charter includes time in the water, so pack swimwear and reef-safe sunscreen.">
+      <div class="card-img-wrap">
+        <img src="SosuaSnorkelCatamaran.jpg" alt="Sosúa Snorkel Catamaran Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Sosúa Snorkel Catamaran</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            15+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">📍 Sosúa Reef</span>
+        <p class="card-desc">A crewed catamaran charter from Puerto Plata to Sosúa, with a snorkel stop, food and drinks included.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$1,200 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Sosua%20Snorkel%20Catamaran." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 8: Bertram 54 Yacht ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="A 54-foot Bertram motor yacht, offering a stable, roomy ride for groups cruising the Puerto Plata coast."
+         data-highlights="54-foot Bertram yacht | Capacity for 15+ guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="One of the roomier motor yachts in the fleet, with a stable ride well suited to calmer group outings.">
+      <div class="card-img-wrap">
+        <img src="Bertram54Yacht.jpg" alt="Bertram 54 Yacht Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Bertram 54 Yacht</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            15+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">🛥️ 54' Motor Yacht</span>
+        <p class="card-desc">A 54-foot Bertram motor yacht with full crew, food and drinks, offering a smooth 3-hour cruise for groups.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$900 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Bertram%2054%20Yacht." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ── CATAMARAN CARD 9: Viking 48 Yacht ── -->
+    <div class="tour-card catamaran-card" data-category="water"
+         data-extra="A 48-foot Viking motor yacht, a fast and comfortable choice for a 3-hour charter out of Puerto Plata."
+         data-highlights="48-foot Viking yacht | Capacity for 15+ guests | Full crew included | Food and drinks on board"
+         data-included="Professional crew | Food and drinks | 3-hour cruise | Sound system"
+         data-good-to-know="One of the more affordable options in the fleet, without compromising on crew, food or drinks.">
+      <div class="card-img-wrap">
+        <img src="Viking48Yacht.webp" alt="Viking 48 Yacht Charter" loading="lazy">
+        <span class="card-badge catamaran">3 Hours</span>
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">Viking 48 Yacht</h3>
+        <div class="card-meta">
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            3 hours
+          </span>
+          <span class="card-meta-item">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            15+ guests
+          </span>
+        </div>
+        <span class="catamaran-tag">🛥️ 48' Motor Yacht</span>
+        <p class="card-desc">A 48-foot Viking motor yacht with full crew, food and drinks, a great-value pick for a 3-hour cruise.</p>
+      </div>
+      <div class="card-footer">
+        <div class="card-price">
+          <span class="card-price-from">From</span>
+          <span class="card-price-amount">$850 <span>/ trip</span></span>
+        </div>
+        <a href="https://wa.me/13435491472?text=Hi!%20I%27m%20interested%20in%20renting%20the%20Viking%2048%20Yacht." class="btn-book" target="_blank" rel="noopener">
+          Book Now
+        </a>
+      </div>
+    </div>
+
+    <!-- ✏️ ADD MORE CATAMARAN CARDS HERE — just copy any card block above and edit the content -->
+  </div>
+</div>
+</div>
 </div>
 <!-- /.tours-golf-wrap -->
 
@@ -3400,6 +3792,7 @@
     const wrap = document.getElementById('toursGolfWrap');
     wrap.classList.toggle('golf-mode', tab === 'golf');
     wrap.classList.toggle('fishing-mode', tab === 'fishing');
+    wrap.classList.toggle('catamaran-mode', tab === 'catamaran');
   }
 
   // Tour card category filter (scoped to the Tours & Excursions tab only)
